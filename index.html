@@ -31,7 +31,7 @@
   <h2>How it works</h2>
   <ol class="steps">
     <li><strong>Capture</strong> — photo, annotation, voice note, optional crew selfie</li>
-    <li><strong>Stamp</strong> — date/time, GPS and a Google-Maps QR on every exported photo. Original untouched.</li>
+    <li><strong>Stamp</strong> — date/time, GPS and a Google-Maps QR on every exported photo, using the phone's time and location at capture. Original untouched. Imported photos are labeled “Imported” with the import time and place.</li>
     <li><strong>AI</strong> — turns your photos and voice notes into a clean customer report. You approve before sending.</li>
     <li><strong>Send</strong> — branded PDF with the stamped photos attached.</li>
   </ol>
@@ -51,6 +51,16 @@
     <div class="app punch"><h3>iPruf for Punch Lists</h3><p>Walkthrough punch lists by room &amp; trade — AI Punch List.</p></div>
   </div>
   <p class="note">Basic $9.99/mo • AI Pro $19.99/mo — Founding Pricing, locked for early users. Free tier: 3 jobs. App + reports in English, Spanish &amp; Portuguese.</p>
+</section>
+
+<section id="plans">
+  <h2>Plans</h2>
+  <ul>
+    <li><strong>Free</strong> — 3 jobs with full export. After that: view-only in the app, SAMPLE-watermarked previews.</li>
+    <li><strong>Basic $9.99/mo</strong> — unlimited jobs, clean PDF export, stamped photos, annotation, voice notes, checklists, customer acceptance/sign-off, scheduling and period reports.</li>
+    <li><strong>AI Pro $19.99/mo</strong> — everything in Basic, plus AI-drafted customer reports from your photos and voice notes, custom AI instructions, AI period summaries, and your branding only (no iPruf footer).</li>
+  </ul>
+  <p class="note">Built for owner-operators and small crews where the person capturing is the person sending the report. No dispatcher dashboard, no shared office workspace — by design, your jobs stay in your own iCloud.</p>
 </section>
 
 <section>
@@ -85,7 +95,7 @@
 
 <section id="samples">
   <h2>Sample reports — click to enlarge</h2>
-  <p>Left is what the crew captures (Basic). Right is the AI-cleaned customer report (AI Pro). Real trades, real workflow.</p>
+  <p>Illustrative sample reports built from trade photos — not real customer jobs. Left is what the crew captures (Basic). Right is the AI-cleaned customer report (AI Pro).</p>
   <div class="gallery">
     <a href="assets/samples/contractorproof-sample.jpg" target="_blank"><img src="assets/samples/contractorproof-sample.jpg" alt="Contractor sample report"><span>Contractors — Daily Jobsite Report</span></a>
     <a href="assets/samples/contractorproof-pro-sample.jpg" target="_blank"><img src="assets/samples/contractorproof-pro-sample.jpg" alt="Contractor AI Pro sample: imported photo stamp and white-label report"><span>Contractors — AI Pro: Imported Photos, Your Brand Only</span></a>
@@ -96,7 +106,7 @@
     <a href="assets/samples/siteproof-sample.jpg" target="_blank"><img src="assets/samples/siteproof-sample.jpg" alt="Site observation sample report"><span>Architects &amp; Engineers — Site Observation</span></a>
     <a href="assets/samples/deliveryproof-sample.jpg" target="_blank"><img src="assets/samples/deliveryproof-sample.jpg" alt="Delivery proof sample report"><span>Delivery — Proof of Delivery</span></a>
     <a href="assets/samples/serveproof-sample.jpg" target="_blank"><img src="assets/samples/serveproof-sample.jpg" alt="Process server sample report"><span>Process Servers — Attempt Log</span></a>
-    <a href="assets/samples/punchproof-sample.jpg" target="_blank"><img src="assets/samples/punchproof-sample.jpg" alt="Punch list sample report"><span>Designers — Punch List</span></a>
+    <a href="assets/samples/punchproof-sample.jpg" target="_blank"><img src="assets/samples/punchproof-sample.jpg" alt="Punch list sample report"><span>Punch Lists — Room-by-Room Punch List</span></a>
   </div>
 </section>
 
@@ -114,6 +124,7 @@
   <h2>Company &amp; contact</h2>
   <p><strong>iPruf is a product of VRITAS LLC</strong>, based in Santa Clara County, California. Questions: <a href="mailto:support@ipruf.com">support@ipruf.com</a>.</p>
   <p>iPruf apps are in pre-launch. This website does not sell downloads, request passwords, or collect payment-card details. When the apps launch, subscriptions are billed by Apple through the App Store. Your photos and reports stay on your device and in your own iCloud account.</p>
+  <p><a href="mailto:support@ipruf.com?subject=iPruf%20launch%20list">Join the launch list</a> — tell us your trade and we’ll email you when the first app opens.</p>
 </section>
 
 <footer>
@@ -167,12 +178,12 @@
 
 <section id="pricing-calc">
   <h2>What does your crew cost you today?</h2>
-  <p>Move the slider. iPruf AI Pro is $19.99 per person/month. Field-service incumbents commonly start around $63+ per user/month before add-ons.</p>
+  <p>If your current documentation tool charges about $63 per user/month, move the slider. iPruf AI Pro is $19.99 per person/month. This is a per-seat comparison before bundle discounts or your OpenAI usage.</p>
   <label>Crew size: <strong id="crewCount">5</strong></label>
   <input type="range" min="1" max="50" value="5" id="crewRange">
   <div class="calc-grid">
     <div class="calc-card"><h3>iPruf AI Pro</h3><p class="calc-num" id="iprufCost">$99.95/mo</p></div>
-    <div class="calc-card muted"><h3>Typical incumbent</h3><p class="calc-num" id="incCost">$315/mo</p></div>
+    <div class="calc-card muted"><h3>At $63 per user</h3><p class="calc-num" id="incCost">$315/mo</p></div>
     <div class="calc-card save"><h3>You keep</h3><p class="calc-num" id="saveCost">$215.05/mo</p></div>
   </div>
 </section>
