@@ -92,5 +92,84 @@
   <p>Made with iPruf — ipruf.com</p>
   <p class="small">© 2026 iPruf. All rights reserved.</p>
 </footer>
+
+<section id="demo">
+  <h2>Try the stamp — live demo</h2>
+  <p>Drag the slider. Left: a normal job photo. Right: the same photo after iPruf stamps it with date, time, GPS and a map QR. The original file stays untouched.</p>
+  <div class="ba-wrap">
+    <img src="assets/demo-after.jpg" alt="Stamped photo with time GPS and QR" class="ba-after">
+    <div class="ba-before" id="baBefore"><img src="assets/demo-before.jpg" alt="Original unstamped photo"></div>
+    <input type="range" min="0" max="100" value="55" id="baRange" aria-label="Before after slider">
+    <span class="ba-tag before-tag">Before</span><span class="ba-tag after-tag">Stamped</span>
+  </div>
+</section>
+
+<section id="language-demo">
+  <h2>Your crew talks. Your customer reads — in their language.</h2>
+  <p>Voice notes become a customer-ready report. Pick the report language:</p>
+  <div class="lang-switch" role="tablist" aria-label="Report language">
+    <button class="lang-btn active" data-lang="en">English</button>
+    <button class="lang-btn" data-lang="es">Español</button>
+    <button class="lang-btn" data-lang="pt">Português</button>
+  </div>
+  <div class="report-card">
+    <p class="report-label" id="reportLabel">AI Daily Report — draft for your approval</p>
+    <p id="reportText">Work recorded today: framing completed at Level 2, north elevation sheathing in progress. Two items noted for follow-up. Photos stamped at the site with time and location.</p>
+  </div>
+</section>
+
+<section id="finder">
+  <h2>Which iPruf app do you need?</h2>
+  <p>Pick what you do — we will point you to the right app and sample report.</p>
+  <div class="finder-grid">
+    <button class="finder-btn" data-app="ContractorProof" data-sample="assets/samples/contractorproof-sample.jpg">I build / remodel</button>
+    <button class="finder-btn" data-app="ServiceProof" data-sample="assets/samples/serviceproof-sample.jpg">I service equipment</button>
+    <button class="finder-btn" data-app="RoofProof" data-sample="assets/samples/roofproof-sample.jpg">I roof</button>
+    <button class="finder-btn" data-app="CleaningProof" data-sample="assets/samples/cleaningproof-sample.jpg">I clean</button>
+    <button class="finder-btn" data-app="PropertyProof" data-sample="assets/samples/propertyproof-sample.jpg">I manage property</button>
+    <button class="finder-btn" data-app="SiteProof" data-sample="assets/samples/siteproof-sample.jpg">I observe sites</button>
+    <button class="finder-btn" data-app="DeliveryProof" data-sample="assets/samples/deliveryproof-sample.jpg">I deliver</button>
+    <button class="finder-btn" data-app="ServeProof" data-sample="assets/samples/serveproof-sample.jpg">I serve papers</button>
+    <button class="finder-btn" data-app="PunchProof" data-sample="assets/samples/punchproof-sample.jpg">I punch-list</button>
+  </div>
+  <p id="finderResult" class="finder-result">Your match will appear here.</p>
+</section>
+
+<section id="pricing-calc">
+  <h2>What does your crew cost you today?</h2>
+  <p>Move the slider. iPruf AI Pro is $19.99 per person/month. Field-service incumbents commonly start around $63+ per user/month before add-ons.</p>
+  <label>Crew size: <strong id="crewCount">5</strong></label>
+  <input type="range" min="1" max="50" value="5" id="crewRange">
+  <div class="calc-grid">
+    <div class="calc-card"><h3>iPruf AI Pro</h3><p class="calc-num" id="iprufCost">$99.95/mo</p></div>
+    <div class="calc-card muted"><h3>Typical incumbent</h3><p class="calc-num" id="incCost">$315/mo</p></div>
+    <div class="calc-card save"><h3>You keep</h3><p class="calc-num" id="saveCost">$215.05/mo</p></div>
+  </div>
+</section>
+<script>
+const baRange=document.getElementById('baRange'), baBefore=document.getElementById('baBefore');
+function setBA(){ baBefore.style.width = baRange.value + '%'; }
+baRange.addEventListener('input', setBA); setBA();
+const reports={
+ en:{label:'AI Daily Report — draft for your approval', text:'Work recorded today: framing completed at Level 2, north elevation sheathing in progress. Two items noted for follow-up. Photos stamped at the site with time and location.'},
+ es:{label:'Informe diario con IA — borrador para tu aprobación', text:'Trabajo registrado hoy: estructura completada en el Nivel 2, revestimiento de la elevación norte en curso. Dos puntos anotados para seguimiento. Fotos selladas en el sitio con hora y ubicación.'},
+ pt:{label:'Relatório diário com IA — rascunho para sua aprovação', text:'Trabalho registrado hoje: estrutura concluída no Nível 2, revestimento da elevação norte em andamento. Dois itens anotados para acompanhamento. Fotos carimbadas no local com hora e localização.'}
+};
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+ const r=reports[b.dataset.lang]; document.getElementById('reportLabel').textContent=r.label; document.getElementById('reportText').textContent=r.text;
+}));
+const finderResult=document.getElementById('finderResult');
+document.querySelectorAll('.finder-btn').forEach(b=>b.addEventListener('click',()=>{
+ finderResult.innerHTML = 'Your app: <strong>' + b.dataset.app + '</strong> — <a href="' + b.dataset.sample + '" target="_blank">see a sample report</a>. Basic $9.99/mo, AI Pro $19.99/mo.';
+}));
+const crewRange=document.getElementById('crewRange');
+function money(n){ return '$' + n.toFixed(2); }
+function calc(){ const n=+crewRange.value; document.getElementById('crewCount').textContent=n;
+ const ipruf=n*19.99, inc=n*63; document.getElementById('iprufCost').textContent=money(ipruf)+'/mo';
+ document.getElementById('incCost').textContent=money(inc)+'/mo'; document.getElementById('saveCost').textContent=money(inc-ipruf)+'/mo'; }
+crewRange.addEventListener('input', calc); calc();
+</script>
+
 </body>
 </html>
