@@ -57,3 +57,6 @@ a{color:var(--orange-dark)}
 @media(min-width:901px){.apps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:900px) and (min-width:561px){.apps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.apps{grid-template-columns:1fr}}
+
+/* Missing card accents for Tier-1 apps */
+.site{border-top:6px solid #334155}.delivery{border-top:6px solid #0D9488}.serve{border-top:6px solid #CA8A04}.punch{border-top:6px solid #DB2777}
