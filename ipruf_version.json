@@ -1,0 +1,10 @@
+{
+  "brand": "iPruf",
+  "domain": "ipruf.com",
+  "tagline": "Captured. Stamped. Sent.",
+  "formula": "AI + Stamped Workflow",
+  "apps": ["ContractorProof","ServiceProof","RoofProof","CleaningProof","PropertyProof"],
+  "pricing": {"basic_monthly_usd": 9.99, "ai_pro_monthly_usd": 19.99, "free_jobs": 3},
+  "version": "1.0.0",
+  "updated": "2026-10-03"
+}
