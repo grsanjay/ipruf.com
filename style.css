@@ -17,3 +17,12 @@ h2{color:var(--orange)}
 footer{text-align:center;padding:32px 20px 48px;color:var(--slate)}
 footer a{color:var(--orange)}
 .small{font-size:.85rem}
+
+.topnav{text-align:center;padding:0 20px 8px}
+.topnav a{color:#F97316;text-decoration:none;font-weight:600}
+.hero-video{width:100%;max-width:860px;border-radius:16px;border:2px solid #F97316;background:#000}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.steps-grid img,.gallery img{width:100%;height:auto;border-radius:12px;display:block}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.gallery a{color:#fff;text-decoration:none;background:#111c30;border-radius:14px;padding:10px}
+.gallery span{display:block;text-align:center;padding:10px 4px 4px;color:#F97316;font-weight:600}
