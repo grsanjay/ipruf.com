@@ -50,3 +50,10 @@ a{color:var(--orange-dark)}
 .calc-num{font-size:1.45rem;font-weight:800;color:#0A1220}
 #pricing-calc input[type=range]{width:min(520px,90%)}
 @media(max-width:700px){.calc-grid{grid-template-columns:1fr}.ba-before img{width:100vw}}
+
+/* App grid symmetry: equal-height cards in a clean 3x3 layout */
+.apps{grid-auto-rows:1fr;align-items:stretch}
+.apps .app{margin:0;height:100%;display:flex;flex-direction:column}
+@media(min-width:901px){.apps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px) and (min-width:561px){.apps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.apps{grid-template-columns:1fr}}
