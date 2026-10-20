@@ -201,6 +201,18 @@
 const baRange=document.getElementById('baRange'), baBefore=document.getElementById('baBefore');
 function setBA(){ baBefore.style.width = baRange.value + '%'; }
 baRange.addEventListener('input', setBA); setBA();
+// Auto-play: sweep the slider left and right until the visitor grabs it; resume after a pause.
+const baReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let baHoldUntil = 0, baVisible = true;
+['pointerdown','input'].forEach(ev=>baRange.addEventListener(ev, ()=>{ baHoldUntil = Date.now() + 4000; }));
+if ('IntersectionObserver' in window) { new IntersectionObserver(e=>{ baVisible = e[0].isIntersecting; }).observe(baRange); }
+if (!baReduceMotion) { (function baTick(t){
+  if (baVisible && Date.now() > baHoldUntil) {
+    baRange.value = 50 - 42 * Math.cos(t / 1500);
+    setBA();
+  }
+  requestAnimationFrame(baTick);
+})(performance.now()); }
 const reports={
  en:{label:'AI Daily Report — draft for your approval', text:'Work recorded today: framing completed at Level 2, north elevation sheathing in progress. Two items noted for follow-up. Photos stamped at the site with time and location.'},
  es:{label:'Informe diario con IA — borrador para tu aprobación', text:'Trabajo registrado hoy: estructura completada en el Nivel 2, revestimiento de la elevación norte en curso. Dos puntos anotados para seguimiento. Fotos selladas en el sitio con hora y ubicación.'},
