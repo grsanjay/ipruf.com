@@ -82,7 +82,7 @@
   <details><summary>Why do I need my own OpenAI key for the AI?</summary><p>So your data and your costs stay yours. You add your key once (about 3 minutes — step-by-step on the Support page). It stays in your phone’s Keychain, iPruf never sees it, and OpenAI bills you directly, only for what you use. Nothing is sent to AI without your consent.</p></details>
   <details><summary>Does iPruf certify or verify my work?</summary><p>No — by design. iPruf records what was captured, when and where. It never issues pass/fail judgments, certifications or valuations. Your customer gets a clear, time-stamped record — not a verdict.</p></details>
   <details><summary>Can my customer sign off on a report?</summary><p>Yes. They can review and sign on your phone, or confirm later with the approval code that travels with the report. The record reads “Customer acknowledged receipt of this report” — a receipt record that settles most “I never got it” disputes.</p></details>
-  <details><summary>What languages does it speak?</summary><p>English, Spanish and Portuguese — and the three are independent: app screens, voice-note transcription and the report language are each set separately. Your crew can work in Spanish and send the customer an English report.</p></details>
+  <details><summary>What languages does it speak?</summary><p>English and Spanish — and the two are independent: app screens, voice-note transcription and the report language are each set separately. Your crew can work in Spanish and send the customer an English report.</p></details>
   <details><summary>What happens if I cancel?</summary><p>Nothing is deleted and nothing is held hostage — your jobs stay in your iCloud. Resubscribe any time and you pick up right where you left off.</p></details>
 </section>
 
@@ -100,7 +100,7 @@
     <div class="app serve"><h3>iPruf for Process Servers</h3><p>GPS/time-stamped attempt logs — AI Attempt Summary.</p></div>
     <div class="app punch"><h3>iPruf for Punch Lists</h3><p>Walkthrough punch lists by room &amp; trade — AI Punch List.</p></div>
   </div>
-  <p class="note">Basic $9.99/mo • AI Pro $19.99/mo — Founding Pricing, locked for early users. Free tier: 3 jobs. App + reports in English, Spanish &amp; Portuguese.</p>
+  <p class="note">Basic $9.99/mo • AI Pro $19.99/mo — Founding Pricing, locked for early users. Free tier: 3 jobs. App + reports in English &amp; Spanish.</p>
 </section>
 
 <section id="plans">
@@ -210,7 +210,6 @@
   <div class="lang-switch" role="tablist" aria-label="Report language">
     <button class="lang-btn active" data-lang="en">English</button>
     <button class="lang-btn" data-lang="es">Español</button>
-    <button class="lang-btn" data-lang="pt">Português</button>
   </div>
   <div class="report-card">
     <p class="report-label" id="reportLabel">AI Daily Report — draft for your approval</p>
@@ -265,7 +264,6 @@ if (!baReduceMotion) { (function baTick(t){
 const reports={
  en:{label:'AI Daily Report — draft for your approval', text:'Work recorded today: framing completed at Level 2, north elevation sheathing in progress. Two items noted for follow-up. Photos stamped at the site with time and location.'},
  es:{label:'Informe diario con IA — borrador para tu aprobación', text:'Trabajo registrado hoy: estructura completada en el Nivel 2, revestimiento de la elevación norte en curso. Dos puntos anotados para seguimiento. Fotos selladas en el sitio con hora y ubicación.'},
- pt:{label:'Relatório diário com IA — rascunho para sua aprovação', text:'Trabalho registrado hoje: estrutura concluída no Nível 2, revestimento da elevação norte em andamento. Dois itens anotados para acompanhamento. Fotos carimbadas no local com hora e localização.'}
 };
 document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{
  document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
